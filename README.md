@@ -62,6 +62,10 @@ return (
 | weekendToTime    | string   | '12:00' | Weekend end time                            |
 | timeSlotInterval | number   | 15      | Slot interval in minutes                    |
 
+## Screenshots
+
+![Screenshot](/img/screenshot.png?raw=true "Screenshot")
+
 ## License
 
 ISC
