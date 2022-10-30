@@ -1,5 +1,8 @@
+// @ts-ignore
 import moment from "moment";
+// @ts-ignore
 import { Flex, Pressable, Text, Box, VStack } from "native-base";
+// @ts-ignore
 import React, { useEffect, useState } from "react";
 import { IPickerProps } from "./types";
 
@@ -15,7 +18,10 @@ const TimeSlotPicker = (props: IPickerProps) => {
     let arr: any = [];
     while (startTime <= endTime) {
       arr.push(startTime.format("HH:mm"));
-      startTime.add(15, "minutes");
+      startTime.add(
+        props.timeSlotInterval ? props.timeSlotInterval : 30,
+        "minutes"
+      );
     }
     return arr;
   };
@@ -28,7 +34,7 @@ const TimeSlotPicker = (props: IPickerProps) => {
     } else {
       setSlots(createTimeslots(props.weekDayFromTime, props.weekDayToTime));
     }
-  }, []);
+  }, [props.timeSlotInterval]);
 
   return (
     <Box>

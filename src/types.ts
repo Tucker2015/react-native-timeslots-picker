@@ -17,5 +17,10 @@ export interface IPickerProps {
    */
   weekendFromTime: string;
   weekendToTime: string;
+  /**
+   * Amount of Minutes between each time slot
+   * @default 30
+   */
+  timeSlotInterval?: number;
   slotResult: (slot: string) => void;
 }

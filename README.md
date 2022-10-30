@@ -1,8 +1,8 @@
 ## React Native Time Slot Picker
 
-[![npm version](https://badge.fury.io/js/react-native-timeslots-picker.svg)](//npmjs.com/package/react-native-timeslots-picker)
-[![downloads](https://img.shields.io/npm/dm/react-native-timeslots-picker.svg)](//npmjs.com/package/react-native-timeslots-picker)
-[![MIT License](https://img.shields.io/npm/l/react-native-timeslots-picker.svg)](//npmjs.com/package/react-native-timeslots-picker)
+[![npm version](https://badge.fury.io/js/react-native-timeslots-picker.svg)](https://npmjs.com/package/react-native-timeslots-picker)
+[![downloads](https://img.shields.io/npm/dm/react-native-timeslots-picker.svg)](https://npmjs.com/package/react-native-timeslots-picker)
+[![MIT License](https://img.shields.io/npm/l/react-native-timeslots-picker.svg)](https://npmjs.com/package/react-native-timeslots-picker)
 
 ## Simple TimeSlot Picker for React Native.
 
@@ -39,6 +39,7 @@ return (
           slotResult={slot => {
             setSelectedTimeSlot(slot);
           }}
+          timeSlotInterval={15}
           weekDayFromTime={'08:00'}
           weekDayToTime={'18:00'}
           weekendFromTime={'08:00'}
@@ -49,3 +50,18 @@ return (
 )
 
 ```
+
+## Props
+
+| Prop             | Type     | Default | Description                                 |
+| ---------------- | -------- | ------- | ------------------------------------------- |
+| slotResult       | function | null    | Callback function to get selected time slot |
+| weekDayFromTime  | string   | '08:00' | Weekday start time                          |
+| weekDayToTime    | string   | '18:00' | Weekday end time                            |
+| weekendFromTime  | string   | '08:00' | Weekend start time                          |
+| weekendToTime    | string   | '12:00' | Weekend end time                            |
+| timeSlotInterval | number   | 15      | Slot interval in minutes                    |
+
+## License
+
+ISC
