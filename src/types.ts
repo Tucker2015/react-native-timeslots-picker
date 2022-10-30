@@ -27,5 +27,14 @@ export interface IPickerProps {
    * @default false
    */
   disableHeader?: boolean;
+  /**
+   * Width of the time slot picker in pixels
+   * @default 60px
+   */
+  width?: "80px" | "100px";
+  /**
+   * Sets the selected time slot in the time slot picker
+   * @example slotResult={slot => {setSelectedTimeSlot(slot)}}
+   */
   slotResult: (slot: string) => void;
 }

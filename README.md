@@ -1,6 +1,6 @@
 ## React Native Time Slot Picker
 
-[![npm version](https://badge.fury.io/js/react-native-timeslots-picker.svg)](https://npmjs.com/package/react-native-timeslots-picker)
+[![npm version](https://badge.fury.io/js/react-native-timeslots-picker.svg)](https://badge.fury.io/js/react-native-timeslots-picker)
 [![downloads](https://img.shields.io/npm/dm/react-native-timeslots-picker.svg)](https://npmjs.com/package/react-native-timeslots-picker)
 [![MIT License](https://img.shields.io/npm/l/react-native-timeslots-picker.svg)](https://npmjs.com/package/react-native-timeslots-picker)
 

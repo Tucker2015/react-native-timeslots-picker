@@ -9,6 +9,7 @@ import { IPickerProps } from "./types";
 const TimeSlotPicker = (props: IPickerProps) => {
   const [slots, setSlots] = useState([]);
   const [headerShown, setHeaderShown] = useState(false);
+  const [selectedSlot, setSelectedSlot] = useState(null);
 
   const createTimeslots = (fromTime: string, toTime: string) => {
     let startTime = moment(fromTime, "HH:mm");
@@ -71,16 +72,26 @@ const TimeSlotPicker = (props: IPickerProps) => {
         {slots.map((slot: string, index: number) => (
           <Pressable
             onPress={() => {
-              return props.slotResult(slot);
+              //select or deselect the slot
+              if (selectedSlot === slot) {
+                setSelectedSlot(null);
+                props.slotResult("");
+              } else {
+                setSelectedSlot(slot);
+                props.slotResult(slot);
+              }
             }}
             key={index}
+            w={props.width ? props.width : "60px"}
+            alignItems={"center"}
+            justifyContent={"center"}
             p={2}
-            m={1}
+            m={0.5}
             _dark={{
-              bg: "blueGray.800",
+              bg: selectedSlot === slot ? "green.600" : "blueGray.800",
             }}
             _light={{
-              bg: "blueGray.300",
+              bg: selectedSlot === slot ? "green.600" : "blueGray.50",
             }}
           >
             <Text>{slot}</Text>
