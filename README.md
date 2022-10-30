@@ -61,6 +61,7 @@ return (
 | weekendFromTime  | string   | '08:00' | Weekend start time                          |
 | weekendToTime    | string   | '12:00' | Weekend end time                            |
 | timeSlotInterval | number   | 15      | Slot interval in minutes                    |
+| disableHeader    | boolean  | false   | Disable header shown                        |
 
 ## Screenshots
 

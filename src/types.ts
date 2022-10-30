@@ -22,5 +22,10 @@ export interface IPickerProps {
    * @default 30
    */
   timeSlotInterval?: number;
+  /**
+   * Disable the time slot picker default header
+   * @default false
+   */
+  disableHeader?: boolean;
   slotResult: (slot: string) => void;
 }

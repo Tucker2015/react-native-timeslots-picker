@@ -8,6 +8,7 @@ import { IPickerProps } from "./types";
 
 const TimeSlotPicker = (props: IPickerProps) => {
   const [slots, setSlots] = useState([]);
+  const [headerShown, setHeaderShown] = useState(false);
 
   const createTimeslots = (fromTime: string, toTime: string) => {
     let startTime = moment(fromTime, "HH:mm");
@@ -26,7 +27,16 @@ const TimeSlotPicker = (props: IPickerProps) => {
     return arr;
   };
 
+  const setHeader = () => {
+    if (props.disableHeader) {
+      setHeaderShown(false);
+    } else {
+      setHeaderShown(true);
+    }
+  };
+
   useEffect(() => {
+    setHeader();
     //show if it is weekday or weekend
     const weekday = moment().weekday();
     if (weekday === 0 || weekday === 6) {
@@ -34,17 +44,21 @@ const TimeSlotPicker = (props: IPickerProps) => {
     } else {
       setSlots(createTimeslots(props.weekDayFromTime, props.weekDayToTime));
     }
-  }, [props.timeSlotInterval]);
+  }, [props.timeSlotInterval, props.disableHeader]);
 
   return (
     <Box>
       <VStack space={1} alignItems={"center"}>
-        <Text fontSize="xl" fontWeight="bold" mb={1}>
-          Select a Time Slot
-        </Text>
-        <Text fontSize="sm" mb={2}>
-          {moment().format("dddd, MMMM Do YYYY")}
-        </Text>
+        {headerShown === true ? (
+          <>
+            <Text fontSize="xl" fontWeight="bold" mb={1}>
+              Select a Time Slot
+            </Text>
+            <Text fontSize="sm" mb={2}>
+              {moment().format("dddd, MMMM Do YYYY")}
+            </Text>
+          </>
+        ) : null}
       </VStack>
       <Flex
         direction="row"
